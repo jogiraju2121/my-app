@@ -1,0 +1,15 @@
+---
+ - hosts: all
+   become: True
+   tasks:
+      - name: Installing Docker on Node
+        yum:
+          name: docker
+          state: present
+      - name: Starting and enabling Docker
+        service: 
+          name: docker
+          state: started
+          enabled: True
+
+...
